@@ -2,7 +2,7 @@
 
 namespace TrainingForTrainer
 {
-    class Employee
+    public class Employee
     {
         private readonly int type;
         private readonly int monthlySalary;
@@ -21,7 +21,7 @@ namespace TrainingForTrainer
             this.bonus = bonus;
         }
 
-        int Payment()
+        public int Payment()
         {
             switch (type)
             {
