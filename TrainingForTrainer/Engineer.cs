@@ -1,6 +1,6 @@
 namespace TrainingForTrainer
 {
-    class Engineer : EmployeeType
+    public class Engineer : EmployeeType
     {
         public override int GetTypeCode()
         {

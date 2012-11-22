@@ -4,11 +4,11 @@ namespace TrainingForTrainer
 {
     public class Employee
     {
-        private readonly int type;
+        private readonly EmployeeType employeeType;
 
         public int Type
         {
-            get { return type; }
+            get { return employeeType.GetTypeCode(); }
         }
 
         private readonly int monthlySalary;
@@ -19,12 +19,12 @@ namespace TrainingForTrainer
         public const int SALESMAN = 1;
         public const int MANAGER = 2;
 
-        public Employee(int type, int monthlySalary, int commission, int bonus)
+        public Employee(int monthlySalary, int commission, int bonus, EmployeeType employeeType)
         {
-            this.type = type;
             this.monthlySalary = monthlySalary;
             this.commission = commission;
             this.bonus = bonus;
+            this.employeeType = employeeType;
         }
 
         public int Payment()
