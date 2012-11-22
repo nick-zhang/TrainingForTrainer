@@ -4,7 +4,12 @@ namespace TrainingForTrainer
     {
         public override int GetTypeCode()
         {
-            return Employee.SALESMAN;
+            return SALESMAN;
+        }
+
+        public override int Payment(Employee employee)
+        {
+            return employee.MonthlySalary + employee.Commission;
         }
     }
 }

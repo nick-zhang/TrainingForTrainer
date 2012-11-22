@@ -11,13 +11,24 @@ namespace TrainingForTrainer
             get { return employeeType.GetTypeCode(); }
         }
 
+        public int MonthlySalary
+        {
+            get { return monthlySalary; }
+        }
+
+        public int Commission
+        {
+            get { return commission; }
+        }
+
+        public int Bonus
+        {
+            get { return bonus; }
+        }
+
         private readonly int monthlySalary;
         private readonly int commission;
         private readonly int bonus;
-
-        public const int ENGINEER = 0;
-        public const int SALESMAN = 1;
-        public const int MANAGER = 2;
 
         public Employee(int monthlySalary, int commission, int bonus, EmployeeType employeeType)
         {
@@ -29,18 +40,7 @@ namespace TrainingForTrainer
 
         public int Payment()
         {
-            switch (Type)
-            {
-                case ENGINEER:
-                    return monthlySalary;
-                case SALESMAN:
-                    return monthlySalary + commission;
-                case MANAGER:
-                    return monthlySalary + bonus;
-                default:
-                    throw new ApplicationException("Incorrect Employee");
-            }
+            return employeeType.Payment(this);
         }
     }
-
 }
