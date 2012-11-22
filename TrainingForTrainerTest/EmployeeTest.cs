@@ -12,7 +12,7 @@ namespace TrainingForTrainerTest
             var engineer = new Employee(0, 3000, 0, 0);
             Assert.AreEqual(3000, engineer.Payment());
         }
-        
+       
         [TestMethod]
         public void ShouldGetSalesmanPaymentWithCommission()
         {

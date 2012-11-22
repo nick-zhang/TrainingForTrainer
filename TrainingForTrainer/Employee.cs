@@ -5,13 +5,19 @@ namespace TrainingForTrainer
     public class Employee
     {
         private readonly int type;
+
+        public int Type
+        {
+            get { return type; }
+        }
+
         private readonly int monthlySalary;
         private readonly int commission;
         private readonly int bonus;
 
-        private const int Engineer = 0;
-        private const int Salesman = 1;
-        private const int Manager = 2;
+        public const int ENGINEER = 0;
+        public const int SALESMAN = 1;
+        public const int MANAGER = 2;
 
         public Employee(int type, int monthlySalary, int commission, int bonus)
         {
@@ -23,13 +29,13 @@ namespace TrainingForTrainer
 
         public int Payment()
         {
-            switch (type)
+            switch (Type)
             {
-                case Engineer:
+                case ENGINEER:
                     return monthlySalary;
-                case Salesman:
+                case SALESMAN:
                     return monthlySalary + commission;
-                case Manager:
+                case MANAGER:
                     return monthlySalary + bonus;
                 default:
                     throw new ApplicationException("Incorrect Employee");
